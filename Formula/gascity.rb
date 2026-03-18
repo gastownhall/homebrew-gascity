@@ -11,7 +11,7 @@ class Gascity < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/gastownhall/gascity/releases/download/v0.13.1-rc9/gascity_0.13.1-rc9_darwin_amd64.tar.gz"
-      sha256 "31a0483ceb48ae1321aecbcbbdb491d6dc49b1b87f128584189480b739c5bd8b"
+      sha256 "cf307a223675f5187f1cd19a5db8e7440dd1d21559a60af9d0d334496a7d8ba8"
 
       define_method(:install) do
         bin.install "gc"
@@ -19,7 +19,7 @@ class Gascity < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/gastownhall/gascity/releases/download/v0.13.1-rc9/gascity_0.13.1-rc9_darwin_arm64.tar.gz"
-      sha256 "e572107c0b897fa54fb49e9d202d2dc5f6657ea4070e7265c3a7cb7fd51dcdeb"
+      sha256 "1353db2db18234e6dfd960e6f5704a8622079a1f6db4991258107f6c09172103"
 
       define_method(:install) do
         bin.install "gc"
@@ -30,14 +30,14 @@ class Gascity < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/gastownhall/gascity/releases/download/v0.13.1-rc9/gascity_0.13.1-rc9_linux_amd64.tar.gz"
-      sha256 "cd489d81aa1b0da39064ea7046cda91738c4988a9ca2a56b7b236b66b45c9bb4"
+      sha256 "ea6be5790341c6bbcc216bf417533280c4ce2a09018bc74f17d1e916aa0064e1"
       define_method(:install) do
         bin.install "gc"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/gastownhall/gascity/releases/download/v0.13.1-rc9/gascity_0.13.1-rc9_linux_arm64.tar.gz"
-      sha256 "a23792dfd57327b0c136de8130ce476a48eb282084ac78897d0e5927dc233e65"
+      sha256 "eee9e5b6e31db9c524e6f8147653547cea7b6e9a10076f758313531d4940f6f3"
       define_method(:install) do
         bin.install "gc"
       end
