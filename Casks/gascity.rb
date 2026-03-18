@@ -15,12 +15,12 @@ cask "gascity" do
     on_intel do
       url "https://github.com/gastownhall/gascity/releases/download/v#{version}/gascity_#{version}_darwin_amd64.tar.gz",
         verified: "github.com/gastownhall/gascity/"
-      sha256 "f63073c8e72b1c99665f3a68f09ba7a39d6586d332fd8c90fdd66d758680c87f"
+      sha256 "7244dd0d38ec1e5e89d8e64c69d7a18cd531895dd65942e5114d1354ebebe4e9"
     end
     on_arm do
       url "https://github.com/gastownhall/gascity/releases/download/v#{version}/gascity_#{version}_darwin_arm64.tar.gz",
         verified: "github.com/gastownhall/gascity/"
-      sha256 "59e64be089f1c9fac41582b8af1823989f142a66c6ec9044335d1c5f814aec1d"
+      sha256 "66d1b23244cc2438ee60fd32f7c3eb9869a820ad1cfb140d4a6532e8415f7111"
     end
   end
 
@@ -28,12 +28,12 @@ cask "gascity" do
     on_intel do
       url "https://github.com/gastownhall/gascity/releases/download/v#{version}/gascity_#{version}_linux_amd64.tar.gz",
         verified: "github.com/gastownhall/gascity/"
-      sha256 "cfb6344cdb062fbee6c03986db2393531d5cf3d7be5750ac1c6ce3bc9c83fb4c"
+      sha256 "307c4fe1d5cee6090740236ebe571281473508abfae88f7c9da06f9fc9129025"
     end
     on_arm do
       url "https://github.com/gastownhall/gascity/releases/download/v#{version}/gascity_#{version}_linux_arm64.tar.gz",
         verified: "github.com/gastownhall/gascity/"
-      sha256 "275d38d941fd71cca1ec97372de0b921ecc4ce229a7b9ce391fa1a507305faf3"
+      sha256 "ea943a67860fbfa9ad679ebd570494b48e480cea07fa606cf8a572f01a2152a6"
     end
   end
 
