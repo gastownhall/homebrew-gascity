@@ -3,7 +3,7 @@ cask "gascity" do
   name "gascity"
   desc "Gas City CLI — an orchestration-builder SDK for multi-agent coding workflows"
   homepage "https://github.com/gastownhall/gascity"
-  version "0.13.1-rc4"
+  version "0.13.1-rc5"
 
   livecheck do
     skip "Auto-generated on release."
@@ -15,12 +15,12 @@ cask "gascity" do
     on_intel do
       url "https://github.com/gastownhall/gascity/releases/download/v#{version}/gascity_#{version}_darwin_amd64.tar.gz",
         verified: "github.com/gastownhall/gascity/"
-      sha256 "cefd6055af82c97d896db9964f80809ef2319e8a64395a5a3319e68b9aec88bf"
+      sha256 "c01054b8eee2dc06f1286b1834a00f2abd93b8100d754c38eb2d6becd1dbf559"
     end
     on_arm do
       url "https://github.com/gastownhall/gascity/releases/download/v#{version}/gascity_#{version}_darwin_arm64.tar.gz",
         verified: "github.com/gastownhall/gascity/"
-      sha256 "f5e2bd0ada6f0c65bb436ef7a97c7129f820e735849ca0ea7359d002486b6a1d"
+      sha256 "7a1c6df009855fb65b61b9d4e4f2dbb2853d8dfe93b66b174397b5177b9d6512"
     end
   end
 
@@ -28,12 +28,12 @@ cask "gascity" do
     on_intel do
       url "https://github.com/gastownhall/gascity/releases/download/v#{version}/gascity_#{version}_linux_amd64.tar.gz",
         verified: "github.com/gastownhall/gascity/"
-      sha256 "9024015050109a9bbd27ee0ee39443bfc3202beb38cbbea8155c54f806a5d818"
+      sha256 "d0538fda3512b3869532945536b7796169eeaeca80256fd8a42d0a3f2984f7fe"
     end
     on_arm do
       url "https://github.com/gastownhall/gascity/releases/download/v#{version}/gascity_#{version}_linux_arm64.tar.gz",
         verified: "github.com/gastownhall/gascity/"
-      sha256 "c81b10750016c5b3aaf15f2f2c0ed215006e2db6fdb32c5882f18b13459c2f9d"
+      sha256 "2d69d856815f2f95dee2c5c256a030c5b5ad508428ba4e1ca5c97b2fc5e8d9a3"
     end
   end
 
