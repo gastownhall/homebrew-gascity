@@ -5,21 +5,21 @@
 class Gascity < Formula
   desc "Gas City CLI — an orchestration-builder SDK for multi-agent coding workflows"
   homepage "https://github.com/gastownhall/gascity"
-  version "0.13.2-rc1"
+  version "0.13.2-rc2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/gastownhall/gascity/releases/download/v0.13.2-rc1/gascity_0.13.2-rc1_darwin_amd64.tar.gz"
-      sha256 "e8924e49b00ad921b2fcc9ea014146a01c7d6a6760b23d18d72f749736c719a1"
+      url "https://github.com/gastownhall/gascity/releases/download/v0.13.2-rc2/gascity_0.13.2-rc2_darwin_amd64.tar.gz"
+      sha256 "6518ee74f05b3044b2fd31917f4c12912173f50557a83c6dafae42dc671099f6"
 
       define_method(:install) do
         bin.install "gc"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/gastownhall/gascity/releases/download/v0.13.2-rc1/gascity_0.13.2-rc1_darwin_arm64.tar.gz"
-      sha256 "f6e4056f742797088ac793986c4d040c74e794558853f804b6fd6fdce3e4b747"
+      url "https://github.com/gastownhall/gascity/releases/download/v0.13.2-rc2/gascity_0.13.2-rc2_darwin_arm64.tar.gz"
+      sha256 "e627730001cefc4aaa55e4da14f6a666711f2e315f7061f54c2336dff70b0f88"
 
       define_method(:install) do
         bin.install "gc"
@@ -29,15 +29,15 @@ class Gascity < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gastownhall/gascity/releases/download/v0.13.2-rc1/gascity_0.13.2-rc1_linux_amd64.tar.gz"
-      sha256 "21b7e3287fd9e1e4f6ccbf1356b87685ae944301270e3815c4e3316acf64f04d"
+      url "https://github.com/gastownhall/gascity/releases/download/v0.13.2-rc2/gascity_0.13.2-rc2_linux_amd64.tar.gz"
+      sha256 "2e5b1ad678082114917541e6a4b20989cd339b37eb2ffc6da864662c50179248"
       define_method(:install) do
         bin.install "gc"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gastownhall/gascity/releases/download/v0.13.2-rc1/gascity_0.13.2-rc1_linux_arm64.tar.gz"
-      sha256 "8d9c6e56b5f38e5ab0f0b6dad93b39691538e21907ca42e463427698199609cc"
+      url "https://github.com/gastownhall/gascity/releases/download/v0.13.2-rc2/gascity_0.13.2-rc2_linux_arm64.tar.gz"
+      sha256 "e823fa6505b65f4231ca9d3d60d7cd851b2cbdaa71341f41d22407f7558c806f"
       define_method(:install) do
         bin.install "gc"
       end
