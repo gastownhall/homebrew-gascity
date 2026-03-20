@@ -5,21 +5,27 @@
 class Gascity < Formula
   desc "Gas City CLI — an orchestration-builder SDK for multi-agent coding workflows"
   homepage "https://github.com/gastownhall/gascity"
-  version "0.13.2"
+  version "0.13.3-rc1"
   license "MIT"
+
+  depends_on "dolt"
+  depends_on "flock"
+  depends_on "git"
+  depends_on "jq"
+  depends_on "tmux"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/gastownhall/gascity/releases/download/v0.13.2/gascity_0.13.2_darwin_amd64.tar.gz"
-      sha256 "bb79f988e06fa3a986d36924dc2d42813291859537ded3e34b604a68a47bcb16"
+      url "https://github.com/gastownhall/gascity/releases/download/v0.13.3-rc1/gascity_0.13.3-rc1_darwin_amd64.tar.gz"
+      sha256 "20b4676e4bbf23d313b0c3d6c7f88d8a4ecd97dd53b8a9ed70156606230458ce"
 
       define_method(:install) do
         bin.install "gc"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/gastownhall/gascity/releases/download/v0.13.2/gascity_0.13.2_darwin_arm64.tar.gz"
-      sha256 "d988a2a0473ed66213db2b71177177aa65ff38c23a65a616fd79bdc0fff2b597"
+      url "https://github.com/gastownhall/gascity/releases/download/v0.13.3-rc1/gascity_0.13.3-rc1_darwin_arm64.tar.gz"
+      sha256 "e8a3c39e6c822e33cca96f2c1c86f318303bbf747dedd0948c53321073685a47"
 
       define_method(:install) do
         bin.install "gc"
@@ -29,27 +35,28 @@ class Gascity < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gastownhall/gascity/releases/download/v0.13.2/gascity_0.13.2_linux_amd64.tar.gz"
-      sha256 "218543b5dc6d8de6c08ed007162c6b5e1a9e142a749f02f190c743beb00b362e"
+      url "https://github.com/gastownhall/gascity/releases/download/v0.13.3-rc1/gascity_0.13.3-rc1_linux_amd64.tar.gz"
+      sha256 "a722234d84023e5148dd14248f29a9086aa628441d446741ac9eda69b3db1ad6"
       define_method(:install) do
         bin.install "gc"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gastownhall/gascity/releases/download/v0.13.2/gascity_0.13.2_linux_arm64.tar.gz"
-      sha256 "4f7158b3169bdbfb1b51872384bddd329d55f7c571939fe72c1be1e2bbc7eded"
+      url "https://github.com/gastownhall/gascity/releases/download/v0.13.3-rc1/gascity_0.13.3-rc1_linux_arm64.tar.gz"
+      sha256 "855564b91e238ce31f1aa057a04a7da0bbb44849d9db7ace438de3039fc7ff8f"
       define_method(:install) do
         bin.install "gc"
       end
     end
   end
 
-  service do
-    run [opt_bin/"gc", "supervisor", "run"]
-    keep_alive true
-    log_path var/"log/gascity/supervisor.log"
-    error_log_path var/"log/gascity/supervisor.err.log"
-    working_dir var/"lib/gascity"
+  def caveats
+    <<~EOS
+      Dependencies (tmux, jq, git, dolt, flock) are installed automatically.
+
+      To start the Gas City supervisor (auto-registers as a login service):
+        gc start <city-path>
+    EOS
   end
 
   test do
