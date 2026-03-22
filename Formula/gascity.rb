@@ -5,7 +5,7 @@
 class Gascity < Formula
   desc "Gas City CLI — an orchestration-builder SDK for multi-agent coding workflows"
   homepage "https://github.com/gastownhall/gascity"
-  version "0.13.3"
+  version "13.4-rc1"
   license "MIT"
 
   depends_on "beads"
@@ -17,16 +17,16 @@ class Gascity < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/gastownhall/gascity/releases/download/v0.13.3/gascity_0.13.3_darwin_amd64.tar.gz"
-      sha256 "026e8aac9ad615b515882dfd050bdb187bf152eaab2e72a0350ee98c9cdddd61"
+      url "https://github.com/gastownhall/gascity/releases/download/v13.4-rc1/gascity_13.4-rc1_darwin_amd64.tar.gz"
+      sha256 "5f21ad3492e81d7b4c356e908ba9e7563a5da15d33495071145def8450179f9a"
 
       define_method(:install) do
         bin.install "gc"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/gastownhall/gascity/releases/download/v0.13.3/gascity_0.13.3_darwin_arm64.tar.gz"
-      sha256 "719c8c7eb4febd47be4f1a3259655362b56df2ddc2bef1496015948ad409cdf5"
+      url "https://github.com/gastownhall/gascity/releases/download/v13.4-rc1/gascity_13.4-rc1_darwin_arm64.tar.gz"
+      sha256 "af452c71394348bb24b17d4396ee5612fee346a96b95f17a389bbf6473166197"
 
       define_method(:install) do
         bin.install "gc"
@@ -36,15 +36,15 @@ class Gascity < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gastownhall/gascity/releases/download/v0.13.3/gascity_0.13.3_linux_amd64.tar.gz"
-      sha256 "cf487b6eeec70103bc9d2baf24abc76d62a6be83c722db68d7fba8b9e625f72b"
+      url "https://github.com/gastownhall/gascity/releases/download/v13.4-rc1/gascity_13.4-rc1_linux_amd64.tar.gz"
+      sha256 "3f4b2c77a1e8a05af247d6d5251cd31301ad68ece72fe60efe8a36ce2cefff06"
       define_method(:install) do
         bin.install "gc"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gastownhall/gascity/releases/download/v0.13.3/gascity_0.13.3_linux_arm64.tar.gz"
-      sha256 "e714a29038810f3abec65a97f0f2fea659b8db0723684bcc21b4ff650f762eaf"
+      url "https://github.com/gastownhall/gascity/releases/download/v13.4-rc1/gascity_13.4-rc1_linux_arm64.tar.gz"
+      sha256 "e3f395a0f71b338fc2eb7e2e7d36d212cb1145fa113359f99186ccc1cac4505c"
       define_method(:install) do
         bin.install "gc"
       end
@@ -55,8 +55,9 @@ class Gascity < Formula
     <<~EOS
       Dependencies (tmux, jq, git, dolt, flock) are installed automatically.
 
-      To start the Gas City supervisor (auto-registers as a login service):
-        gc start <city-path>
+      Get started:
+        gc init <city-path>      # create a new city
+        gc start <city-path>     # start an existing city
     EOS
   end
 
