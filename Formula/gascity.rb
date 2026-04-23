@@ -25,8 +25,8 @@ class Gascity < Formula
       -X main.version=#{version}
     ]
     system "go", "build", *std_go_args(ldflags:, output: bin/"gc"), "./cmd/gc"
-
-    generate_completions_from_executable(bin/"gc", shell_parameter_format: :cobra)
+    # v1.0.0 disables Cobra's default `completion` subcommand, so defer
+    # generate_completions_from_executable until the formula targets a fixed release.
   end
 
   def caveats
@@ -47,10 +47,5 @@ class Gascity < Formula
   test do
     # Binary is installed and reports the tagged version.
     assert_match version.to_s, shell_output("#{bin}/gc version")
-
-    # Cobra completion generation works (verifies the command tree is wired
-    # correctly).
-    assert_match "bash completion", shell_output("#{bin}/gc completion bash")
-    assert_match "#compdef gc", shell_output("#{bin}/gc completion zsh")
   end
 end
