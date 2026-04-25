@@ -4,12 +4,29 @@
 class Gascity < Formula
   desc "Orchestration-builder SDK for multi-agent coding workflows"
   homepage "https://github.com/gastownhall/gascity"
-  url "https://github.com/gastownhall/gascity/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "3c9be7b651b777475ec233aba8f6dcebf62a85da641726898c82ab41c0a30f57"
+  version "1.0.0"
   license "MIT"
-  head "https://github.com/gastownhall/gascity.git", branch: "main"
 
-  depends_on "go" => :build
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/gastownhall/gascity/releases/download/v1.0.0/gascity_1.0.0_darwin_arm64.tar.gz"
+      sha256 "4b6cdbffd528b4b2985108fcd8e212d26deceeecc78e4b28f95a09c7e3091459"
+    else
+      url "https://github.com/gastownhall/gascity/releases/download/v1.0.0/gascity_1.0.0_darwin_amd64.tar.gz"
+      sha256 "d74e75863ed169c0b5dbf6b65f9332f7cd016db13211cc8a438f80e7b825319c"
+    end
+  end
+
+  on_linux do
+    if Hardware::CPU.arm?
+      url "https://github.com/gastownhall/gascity/releases/download/v1.0.0/gascity_1.0.0_linux_arm64.tar.gz"
+      sha256 "0d3107b83ca4e3ad33cc6e145844079d1f4027304c621e071f2f085c64d9a67a"
+    else
+      url "https://github.com/gastownhall/gascity/releases/download/v1.0.0/gascity_1.0.0_linux_amd64.tar.gz"
+      sha256 "cc45e6be54c6bb00fe6915829f8beabb25a585b604a47846845aa7b9a70370d3"
+    end
+  end
+
   depends_on "beads"
   depends_on "jq"
   depends_on "tmux"
@@ -20,13 +37,7 @@ class Gascity < Formula
   end
 
   def install
-    ldflags = %W[
-      -s -w
-      -X main.version=#{version}
-    ]
-    system "go", "build", *std_go_args(ldflags:, output: bin/"gc"), "./cmd/gc"
-    # v1.0.0 disables Cobra's default `completion` subcommand, so defer
-    # generate_completions_from_executable until the formula targets a fixed release.
+    bin.install "gc"
   end
 
   def caveats
