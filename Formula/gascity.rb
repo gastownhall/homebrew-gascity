@@ -4,26 +4,26 @@
 class Gascity < Formula
   desc "Orchestration-builder SDK for multi-agent coding workflows"
   homepage "https://github.com/gastownhall/gascity"
-  version "1.0.0"
+  version "1.1.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/gastownhall/gascity/releases/download/v1.0.0/gascity_1.0.0_darwin_arm64.tar.gz"
-      sha256 "4b6cdbffd528b4b2985108fcd8e212d26deceeecc78e4b28f95a09c7e3091459"
+      url "https://github.com/gastownhall/gascity/releases/download/v1.1.0/gascity_1.1.0_darwin_arm64.tar.gz"
+      sha256 "768befb275a6aff4a83e9387261c6a2772d8c420f1c2ae6cd8b9d233ad3005ae"
     else
-      url "https://github.com/gastownhall/gascity/releases/download/v1.0.0/gascity_1.0.0_darwin_amd64.tar.gz"
-      sha256 "d74e75863ed169c0b5dbf6b65f9332f7cd016db13211cc8a438f80e7b825319c"
+      url "https://github.com/gastownhall/gascity/releases/download/v1.1.0/gascity_1.1.0_darwin_amd64.tar.gz"
+      sha256 "7f44c3d781a1e681e32a87d5e12cbb8f005638f085eb307c67cb760b26444a77"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/gastownhall/gascity/releases/download/v1.0.0/gascity_1.0.0_linux_arm64.tar.gz"
-      sha256 "0d3107b83ca4e3ad33cc6e145844079d1f4027304c621e071f2f085c64d9a67a"
+      url "https://github.com/gastownhall/gascity/releases/download/v1.1.0/gascity_1.1.0_linux_arm64.tar.gz"
+      sha256 "6be4259fce11bee757ed1fc17494031d960248b6cb5071aeb2ed5233e172c4dc"
     else
-      url "https://github.com/gastownhall/gascity/releases/download/v1.0.0/gascity_1.0.0_linux_amd64.tar.gz"
-      sha256 "cc45e6be54c6bb00fe6915829f8beabb25a585b604a47846845aa7b9a70370d3"
+      url "https://github.com/gastownhall/gascity/releases/download/v1.1.0/gascity_1.1.0_linux_amd64.tar.gz"
+      sha256 "b6983ff515d3b7785c00ab1b53948fdae2cc6f6ee88bfc0b60a7c3bca72ab78b"
     end
   end
 
@@ -31,7 +31,6 @@ class Gascity < Formula
   depends_on "jq"
   depends_on "tmux"
 
-  # flock: ships with util-linux on Linux, needs brew on macOS.
   on_macos do
     depends_on "flock"
   end
@@ -43,11 +42,11 @@ class Gascity < Formula
   def caveats
     <<~EOS
       Gas City depends on these runtime tools, installed as dependencies:
-        beads (bd)  — issue tracker
-        dolt        — beads storage (via beads)
-        flock       — file locking
-        jq          — JSON processing
-        tmux        — session management
+        beads (bd)  - issue tracker
+        dolt        - beads storage (via beads)
+        flock       - file locking
+        jq          - JSON processing
+        tmux        - session management
 
       Get started:
         gc init <city-path>      # create a new city
@@ -56,7 +55,6 @@ class Gascity < Formula
   end
 
   test do
-    # Binary is installed and reports the tagged version.
     assert_match version.to_s, shell_output("#{bin}/gc version")
   end
 end
