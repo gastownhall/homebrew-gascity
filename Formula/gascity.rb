@@ -4,26 +4,26 @@
 class Gascity < Formula
   desc "Orchestration-builder SDK for multi-agent coding workflows"
   homepage "https://github.com/gastownhall/gascity"
-  version "1.4.2"
+  version "1.5.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/gastownhall/gascity/releases/download/v1.4.2/gascity_1.4.2_darwin_arm64.tar.gz"
-      sha256 "13e73327547426edb89f3d5c73975b456ddc7c6f3336ae73b2cc17761af53b4c"
+      url "https://github.com/gastownhall/gascity/releases/download/v1.5.0/gascity_1.5.0_darwin_arm64.tar.gz"
+      sha256 "e276f0a20a5e196d6bb9ab205824b1290e1ea5d929c907afa072bc704952861b"
     else
-      url "https://github.com/gastownhall/gascity/releases/download/v1.4.2/gascity_1.4.2_darwin_amd64.tar.gz"
-      sha256 "0ba2164e8935bc37cc756ef028f3f2dd8ab78b2da104b36372766b24f36e161e"
+      url "https://github.com/gastownhall/gascity/releases/download/v1.5.0/gascity_1.5.0_darwin_amd64.tar.gz"
+      sha256 "7ee60580a23fc3afeed83bcd149106cb921120dbeebd85922da3112b357ca185"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/gastownhall/gascity/releases/download/v1.4.2/gascity_1.4.2_linux_arm64.tar.gz"
-      sha256 "bdf31404ab00dbe14f8630e3864867bfe67ec06361e1ad7ee5268ad8a144d038"
+      url "https://github.com/gastownhall/gascity/releases/download/v1.5.0/gascity_1.5.0_linux_arm64.tar.gz"
+      sha256 "dcd841f38d0f7c4a4294c9a6df6fac6b108a96ebae8e2ee6488386420659d1b5"
     else
-      url "https://github.com/gastownhall/gascity/releases/download/v1.4.2/gascity_1.4.2_linux_amd64.tar.gz"
-      sha256 "e67216ec7ea8a09677fd74f90286ef2069655994fac8a7681a7c43c62d08ede4"
+      url "https://github.com/gastownhall/gascity/releases/download/v1.5.0/gascity_1.5.0_linux_amd64.tar.gz"
+      sha256 "0ff5cfc3f1cb2e4260d3d93fcce7a4e40bb5675b74eb9de185156757d4f7fa9c"
     end
   end
 
